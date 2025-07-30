@@ -1,0 +1,9 @@
+__pycache__
+tests/*
+weights/*
+!weights/.gitkeep
+.venv/
+*.pyc
+*.pyo
+*.pyd
+*.pdb

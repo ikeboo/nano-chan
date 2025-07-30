@@ -1,0 +1,21 @@
+[project]
+name = "llama"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy==1.26.4",
+    "onnxruntime-gpu",
+    "colorlog",
+    'espeakng_loader',
+    "phonemizer-fork",
+    "soundfile",
+    "sounddevice",
+    "huggingface-hub>=0.33.2",
+    "llama-cpp-python",
+]
+
+[tool.uv.sources]
+onnxruntime-gpu = { path = "../../Downloads/onnxruntime_gpu-1.22.0-cp310-cp310-linux_aarch64.whl" }
+llama-cpp-python = { url = "https://pypi.jetson-ai-lab.dev/jp6/cu126/+f/213/c44ff20e1dd8a/llama_cpp_python-0.3.8-cp310-cp310-linux_aarch64.whl" }

@@ -1,0 +1,30 @@
+VoiceCapture :
+  rec_device : USB Audio Device
+  chunk_ms : 100      # audio length for processing 
+  thresh_rms : 1100   # RMS of input for silence or not
+  sil_ms : 400        # silent length to stop recording
+
+Transcriber :
+  model_name : nemo-parakeet-tdt-0.6b-v2
+  quantization : int8
+
+LanguageProcessor :
+  model_path : weights/Qwen3-4B-Q3_K_M.gguf
+  n_context : 3000
+  system_prompt : 
+    You are a great Engilish teacher 'Nano-chan' for voice chat system. 
+    You 'MUST' answer and ask shortly as possible. 
+    Please be proactive to ask question to user. 
+    But you 'NEVER' repeat similar questions to the user.
+    And your questions must induce the expansion of user's knowledges.
+    User input is the transcribed text from speech by the speech recognition model. 
+    So if unnatural words or typo are given, please correct words by considering context.
+
+VoiceGenerator :
+  voice : af_heart
+
+VoicePlayer :
+  playback_device : default, ALSA
+  block_size : 500
+
+
